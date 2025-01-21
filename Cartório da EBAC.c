@@ -84,7 +84,7 @@ int consultar()
 		
 	}
 	
-	while(fgets(conteudo, 200, file) != NULL)
+	while(fgets(conteudo, 200, file) != NULL) //mostra os
 	{
 		printf("\nEssas são as Infromações do Usuário: ");
 		printf("%s", conteudo);
@@ -147,7 +147,7 @@ int main()
      	printf("Escolha a opção desejada do menu:\n\n");
     	printf("\t1 - Registrar Nomes\n");
     	printf("\t2 - Consultar Nomes\n");
-    	printf("\t3 - Deletar Nomes\n\n"); 
+    	printf("\t3 - Deletar Nomes\n\n");
     	printf("Opção: "); //Fim do Menu
  	
     	scanf("%d", &opcao); //Armazenando a Escolha do Usuário
@@ -157,19 +157,19 @@ int main()
      	switch(opcao) // começo da seleção do menu
      	{
      		case 1:
-     			registro();// chmada de funções
+     			registro();// chamando a função de registro
   		break;
   		case 2:
-  			consultar();
+  			consultar(); //chamando a função de consultar
 		break;
 		
 		case 3:
-			deletar();
+			deletar(); // chamando a função de deletar
     	break;
     		 
     	default:
-    		printf("Essa Opção Não Está Dísponivel ;(\n");
-		system("pause");
+    		printf("Essa Opção Não Está Dísponivel ;(\n"); // função não existe
+		system("pause"); // espera o comando para voltar para Menu principal
 		break;
 		 } //Fim da seleção
        }
