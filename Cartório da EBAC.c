@@ -102,24 +102,23 @@ int deletar() // Deletar Usuários
 	
 	printf("Digite seu CPF Que Deseja Deletar: ");
 	scanf("%s", cpf);
+		
 	
-	remove(cpf);
 	
 	FILE *file;
 	file = fopen(cpf, "r");
 	
-	
 	if(file != NULL)
 		{
-			printf("Usuário Deletado com sucesso!.");
-		system("pause");
+			remove(cpf);
+			printf("Usuário Encontrado e Deletado com sucesso!.\n");  // caso o sistema encontre o arquivo
+		
 		}
-	if(file == NULL)
-	{
+    
+	else
+	
 		printf("O Usuário Não se Encontra no Sistema!.\n");
-		system("pause");
-
-		}
+		system("pause"); // caso o sistema não encontre o arquivo
 	
 
 	
@@ -134,10 +133,21 @@ int main()
 	
 	int opcao=0; //Definindo Variáveís
 	int laco=1;
+	char senhadigitada[] = "a";
+	int comparacao;
 	
-	for(laco=1;laco=1;) // Sistema Repetição
-	{  
-		system("cls");
+	
+	printf("### Cartório da EBAC ### \n\n");
+	printf("Login de adminstrador!\n\nDigite a sua senha: ");
+	scanf("%s", senhadigitada);
+	comparacao = strcmp (senhadigitada, "admin"); //strcmp compara uma string com a outra
+	
+	if(comparacao== 0) // se valor da senha for igual a da digitada é verdadeiro
+	  {
+	
+    	for(laco=1;laco=1;) // Sistema Repetição
+	   {  
+		system("cls"); // para limpar a tela
 		
 	
 	
@@ -168,8 +178,8 @@ int main()
 			deletar(); // chamando a função de deletar
     	break;
     	case 4: 
-    	printf("Obrigado por Utilizar o sistema!\n");
-    	return 0;
+    	printf("Obrigado por Utilizar o sistema!\n"); // fechando o sistema ;)
+    	return 0; //fechar o sistemas
     	break;
     	
     		 
@@ -179,6 +189,19 @@ int main()
 		break;
 		 } //Fim da seleção
        }
+     }
+     
+     else // sempre repetir a tela quando cliente errar a senha
+
+     printf("\nSenha Incorreta!\n\n");
+
+    system("pause");
+
+    system("cls");
+
+     main();
+
     }
+    
     
  
